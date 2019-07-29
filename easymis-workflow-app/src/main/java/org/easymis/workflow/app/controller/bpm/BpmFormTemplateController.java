@@ -5,7 +5,7 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.easymis.workflow.app.entity.bpm.FormTemplate;
+import org.easymis.workflow.app.entity.bpm.BpmFormTemplate;
 import org.easymis.workflow.app.entity.vo.FormTemplateVO;
 import org.easymis.workflow.app.service.ProcessDefinitionService;
 import org.easymis.workflow.app.service.bpm.BpmFormTemplateService;
@@ -43,7 +43,7 @@ public class BpmFormTemplateController {
 	}
 	//保存
 	@RequestMapping(value = "/save/", method = RequestMethod.POST)  
-	public RestfulMessage saveCategory(HttpSession httpSession, @RequestBody FormTemplate bean) {
+	public RestfulMessage saveCategory(HttpSession httpSession, @RequestBody BpmFormTemplate bean) {
 		try {
 			httpSession.getAttribute("userLogin");
 			service.save(bean);
@@ -55,7 +55,7 @@ public class BpmFormTemplateController {
 	}
 	//修改
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)  
-	public RestfulMessage  updateCategory(HttpSession httpSession,@PathVariable("id") String id,@RequestBody FormTemplate bean) {
+	public RestfulMessage  updateCategory(HttpSession httpSession,@PathVariable("id") String id,@RequestBody BpmFormTemplate bean) {
 		try {
 			httpSession.getAttribute("userLogin");
 			service.update(bean);
@@ -70,7 +70,7 @@ public class BpmFormTemplateController {
 	public RestfulMessage  getCategory(HttpSession httpSession,@PathVariable("id") String id) {
 		try {
 			httpSession.getAttribute("userLogin");
-			FormTemplate bean=service.get(id);
+			BpmFormTemplate bean=service.get(id);
 			return new RestfulMessage().success(bean);
 		} catch (Exception e) {
 			return new RestfulMessage().success("获取分类失败");

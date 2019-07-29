@@ -2,7 +2,7 @@ package org.easymis.workflow.app.service.bpm.impl;
 
 import java.util.List;
 
-import org.easymis.workflow.app.entity.bpm.FormTemplate;
+import org.easymis.workflow.app.entity.bpm.BpmFormTemplate;
 import org.easymis.workflow.app.entity.vo.FormTemplateVO;
 import org.easymis.workflow.app.service.bpm.BpmFormTemplateService;
 import org.easymis.workflow.app.web.DataTableResult;
@@ -15,13 +15,13 @@ import com.github.pagehelper.PageInfo;
 public class BpmFormTemplateServiceImpl implements BpmFormTemplateService {
 
 	@Override
-	public Boolean save(FormTemplate bean) {
+	public Boolean save(BpmFormTemplate bean) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Boolean update(FormTemplate bean) {
+	public Boolean update(BpmFormTemplate bean) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -33,7 +33,7 @@ public class BpmFormTemplateServiceImpl implements BpmFormTemplateService {
 	}
 
 	@Override
-	public FormTemplate get(String id) {
+	public BpmFormTemplate get(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,7 +45,7 @@ public class BpmFormTemplateServiceImpl implements BpmFormTemplateService {
 	}
 
 	@Override
-	public List<FormTemplate> findAll() {
+	public List<BpmFormTemplate> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

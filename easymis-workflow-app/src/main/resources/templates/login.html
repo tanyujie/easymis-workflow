@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Expires" content="0"> 
+<title>数据资产目录服务平台</title>
+<link href="${request.contextPath}/css/login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${request.contextPath}/js/plugins/jQuery/jquery-2.3.4.min.js"></script>
+</head>
+
+<body>
+<div class="login_box">
+      <div class="login_l_img"><img src="${request.contextPath}/images/login-img.png" /></div>
+      <div class="login">
+          <div class="login_logo"><a href="#"><img src="${request.contextPath}/images/login_logo.png" /></a></div>
+          <div class="login_name">
+               <p>流程管理平台</p>
+          </div>
+          <form method="post" action="${request.contextPath}/login">
+              <input name="username" type="text"  value="admin">
+
+<input name="password" type="password" value="123456" id="password" />
+              <input id="submit_login1"  value="登录" style="width:100%;" type="submit">
+          </form>
+      </div>
+      <div class="copyright">EasyMis 版权所有©2005-2019 技术支持电话：13551259347</div>
+</div>
+<script type="text/javascript">
+	$(function() {
+		//登录链接测试，使用时可删除
+/* 		$("#submit_login").click(function() {
+			location.href = "index.html";
+		}); */
+
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+.right_content {
+	width: auto !important;
+	height: 100%;
+	background-color: #fff;
+}
+
+.left_tree {
+	float: left;
+	width: 200px;
+}
+
+.list_style {
+	height: auto;
+}
+
+.left_tree ul {
+	margin-left: -40px;
+	list-style: none;
+	background: #fff;
+}
+
+.role_list_style li {
+	padding-left: 15px;
+	line-height: 40px; height : 40px;
+	cursor: default;
+	height: 40px;
+}
+.role_list_style li:hover {
+	cursor: pointer;
+}
+
+.list_style li span {
+	display: block;
+	float: left;
+	height: 40px;
+}
+
+.role_list_style span.role_name {
+	overflow: hidden;
+	width: 120px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.role_list_style li.select {
+	background: #f2f2f2;
+}
+.role_list_style li.select span.admin {
+    display: inline-block;
+}
+.role_list_style li:hover span.admin {
+	display: inline-block;
+	cursor: default;
+}
+.role_list_style span.admin {
+	display: none;
+}
+
+.list_style li span.admin a {
+    margin-top: 10px;
+}
+.grid_edit, .grid_edit_no_event_displayView {
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background: url(./img/grid_edit.png) 1px 1px no-repeat;
+}
+.grid_delete,
+.grid_delete_no_event {
+	display: block;
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin-right: 8px;
+	background: url(./img/grid_delete.png) 1px 1px no-repeat;
+}
+
+.grid_delete:hover {
+	background: url(./img/grid_delete.png) 0 0 no-repeat;
+}
+.right_grid {
+	position: relative;
+	margin: 0 0 0 201px;
+	border-left: 1px solid #ddd;
+}
+
+.top_tool {
+	height: 52px;
+	margin: 0 12px 12px 0;
+	border-bottom: 1px solid #e4e4e4;
+	overflow: hidden;
+}
+.role_top_tool span {
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	width: 500px;
+	margin: 20px 20px 0 12px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.top_tool a.green_button {
+	line-height: 28px;
+	float: left;
+	height: 28px;
+	margin: 12px 0 0 12px;
+	padding: 0 12px;
+}
+
+.top_tool ul {
+	float: right;
+	margin: 20px 12px 0 0;
+}
+
+.top_tool ul li {
+	float: left;
+	margin-left: 12px;
+}
+.role_top_tool span {
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	width: 500px;
+	margin: 20px 20px 0 12px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.role_top_tool a.green_button {
+	float: right;
+	margin-right: 12px;
+}
+.function_tree_panel {
+	min-height: 300px;
+	margin: 24px 24px 0 24px;
+	padding-bottom: 10px;
+}
+.function_tree .limits_area {
+	margin-left: 0;
+}
+
+.function_tree {
+    height: 320px !important;
+    border-bottom: 1px dotted #ddd;
+}
+.radio_list_area{
+	float: left;
+    width: 100%;
+    margin-top: 20px;	
+}
+.function_tree_panel .radio_list_content {
+    cursor: pointer;
+}
+
+.radio_list_content {
+    line-height: 40px;
+    width: 400px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+    background: #f6f6f6;
+}

@@ -1,0 +1,92 @@
+server:
+  port: 9001
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  register-with-eureka: false
+  fetch-registry: false
+  instance:
+    preferIpAddress: true
+mybatis:
+  configuration:
+    #开启驼峰命名转换
+    map-underscore-to-camel-case: true
+  #mapper.xml文件位置
+  mapper-locations: classpath*:mapper/*.xml
+  check-config-location: true
+  #对应mapper的实体类
+  type-aliases-package: org.easymis.workflow.app.mapper.**
+
+#配置pagehelper
+#pagehelper分页配置 第二种和第三种不需要 重点讲的第一种需要
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+spring:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .html
+    cache: false
+    charset: utf-8
+    request-context-attribute: request
+  zipkin:
+    base-url: http://192.168.230.1:9987/
+  #这里把抽样百分比设置为1，即信息全部采集
+  sleuth:
+    sampler:
+      probability: 1.0
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/easymis?characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
+    database: MYSQL
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  activiti:
+    database-schema-update: true
+    check-process-definitions: false
+    process-definition-location-prefix: classpath:/processes/
+    history-level: full
+    db-history-used: true
+    db-identity-used: true  
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+#  data:
+#    mongodb:
+#      uri: mongodb://snmp:snmp@192.168.100.176:27017/snmp
+# Elasticsearch
+# 9200端口是用来让HTTP REST API来访问ElasticSearch，而9300端口是传输层监听的默认端口
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+#https://gitee.com/fshow/springcloud/blob/master/os-search/src/main/resources/application.yml
+elasticsearch:
+  ip: 127.0.0.1
+  port: 9300
+  pool: 5
+#注意cluster.name需要与config/elasticsearch.yml中的一致
+  cluster:
+    name: elasticsearch
+
+logging:
+  level:
+    root: debug

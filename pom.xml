@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.easymis.workflow</groupId>
+	<artifactId>easymis-workflow</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<description>工作流平台</description>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.5.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<modules>
+		<module>easymis-workflow-admin</module>
+		<module>easymis-workflow-app</module>
+		<module>easymis-workflow-rest</module>
+        <module>easymis-workflow-gateway</module>
+        <module>easymis-workflow-query</module>
+        <module>easymis-workflow-audit</module>
+        <module>easymis-workflow-registry</module>
+        <module>easymis-workflow-sso</module>
+        <module>easymis-workflow-common</module>
+        <module>easymis-workflow-connectors</module>
+        <module>easymis-workflow-runtime</module>
+    </modules>
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<swagger.version>2.2.2</swagger.version>
+		<gson.version>2.8.5</gson.version>
+		<spring.serurity.version>5.0.8.RELEASE</spring.serurity.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

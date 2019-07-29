@@ -1,0 +1,15 @@
+.search-form {
+    margin: 50px auto 0;
+    width: 800px;
+    text-align: left;
+    z-index: 100;
+}
+.catalog-a-level{
+	padding-right: 15px;
+    padding-left: 15px;
+}
+
+.catalog-a-level span{
+	padding-right: 15px;
+    padding-left: 15px;
+}

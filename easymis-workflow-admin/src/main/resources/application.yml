@@ -1,0 +1,31 @@
+###################  项目启动端口  ###################
+server:
+  port: 8080
+
+###################  spring配置  ###################
+spring:
+  profiles:
+    active: dev
+##########################################################
+###################  开发环境的profile  ###################
+##########################################################
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+flowable:
+#关闭定时任务JOB
+  async-executor-activate: false
+logging:
+  level.root: info
+  level.com.easymis: debug
+  path: logs/
+  file: flowable-test.log
+
+
+---
+logging:
+  level.root: warn
+  path: logs/
+  file: flowable-test.log

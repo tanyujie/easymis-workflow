@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+        <!--4-2 创建流程引擎配置-config_samples-->
+        <!--<property name="jdbcUrl" value="jdbc:h2:mem:activiti;DB_CLOSE_DELAY=1000;MVCC=TRUE" />-->
+        <!--<property name="jdbcDriver" value="org.h2.Driver" />-->
+        <!--<property name="jdbcUsername" value="sa" />-->
+        <!--<property name="jdbcPassword" value="" />-->
+
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/activiti6?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"/>
+        <property name="jdbcDriver" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUsername" value="root"/>
+        <property name="jdbcPassword" value="root"/>
+        <!--<property name="databaseSchemaUpdate" value="create-drop"/>-->
+        <property name="databaseSchemaUpdate" value="true"/>
+    </bean>
+
+</beans>

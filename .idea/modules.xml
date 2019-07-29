@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow.iml" filepath="$PROJECT_DIR$/easymis-workflow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-admin/easymis-workflow-admin.iml" filepath="$PROJECT_DIR$/easymis-workflow-admin/easymis-workflow-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-app/easymis-workflow-app.iml" filepath="$PROJECT_DIR$/easymis-workflow-app/easymis-workflow-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-audit/easymis-workflow-audit.iml" filepath="$PROJECT_DIR$/easymis-workflow-audit/easymis-workflow-audit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-common/easymis-workflow-common.iml" filepath="$PROJECT_DIR$/easymis-workflow-common/easymis-workflow-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-connectors/easymis-workflow-connectors.iml" filepath="$PROJECT_DIR$/easymis-workflow-connectors/easymis-workflow-connectors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-gateway/easymis-workflow-gateway.iml" filepath="$PROJECT_DIR$/easymis-workflow-gateway/easymis-workflow-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-query/easymis-workflow-query.iml" filepath="$PROJECT_DIR$/easymis-workflow-query/easymis-workflow-query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-registry/easymis-workflow-registry.iml" filepath="$PROJECT_DIR$/easymis-workflow-registry/easymis-workflow-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-rest/easymis-workflow-rest.iml" filepath="$PROJECT_DIR$/easymis-workflow-rest/easymis-workflow-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-runtime/easymis-workflow-runtime.iml" filepath="$PROJECT_DIR$/easymis-workflow-runtime/easymis-workflow-runtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easymis-workflow-sso/easymis-workflow-sso.iml" filepath="$PROJECT_DIR$/easymis-workflow-sso/easymis-workflow-sso.iml" />
+    </modules>
+  </component>
+</project>

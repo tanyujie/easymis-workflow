@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.easymis.workflow.app.entity.vo.FormDataTemplateVO;
 import org.easymis.workflow.app.service.ProcessDefinitionService;
-import org.easymis.workflow.app.service.bpmn.FormDataTemplateService;
+import org.easymis.workflow.app.service.bpm.FormDataTemplateService;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

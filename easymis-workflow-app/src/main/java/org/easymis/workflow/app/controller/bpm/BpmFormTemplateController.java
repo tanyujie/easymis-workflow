@@ -1,15 +1,14 @@
-package org.easymis.workflow.app.controller.activiti;
+package org.easymis.workflow.app.controller.bpm;
 
 import java.util.HashMap;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.easymis.workflow.app.entity.bpm.BpmnCategory;
-import org.easymis.workflow.app.entity.vo.BpmnCategoryVO;
+import org.easymis.workflow.app.entity.bpm.FormTemplate;
+import org.easymis.workflow.app.entity.vo.FormTemplateVO;
 import org.easymis.workflow.app.service.ProcessDefinitionService;
-import org.easymis.workflow.app.service.bpm.BpmCategoryService;
+import org.easymis.workflow.app.service.bpm.BpmFormTemplateService;
 import org.easymis.workflow.app.utils.RestfulMessage;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,31 +22,31 @@ import org.springframework.web.servlet.ModelAndView;
 import io.swagger.annotations.Api;
 
 @RestController
-@Api(value = "流程定义controller", tags = { "流程定义操作接口" })
-@RequestMapping("/bpmn/bpmDefine/category")
-public class BpmnDefineCategoryController {
+@Api(value = "表单模版管理 controller", tags = { "表单模版管理 操作接口" })
+@RequestMapping("/bpm/form/template")
+public class BpmFormTemplateController {
     @Autowired
     private ProcessDefinitionService processDefinitionService;
     @Autowired
-    private BpmCategoryService categoryService;    
+    private BpmFormTemplateService service;   
 	@RequestMapping("/")
 	public ModelAndView index1(HttpSession httpSession) {
 		httpSession.getAttribute("userLogin");
-		ModelAndView mv = new ModelAndView("activiti/process/definition/index");
+		ModelAndView mv = new ModelAndView("bpm/form/template/index");
 		return mv;
 	}
 	@RequestMapping("/index.html")
 	public ModelAndView  index(HttpSession httpSession) {
 		httpSession.getAttribute("userLogin");
-		ModelAndView mv = new ModelAndView("activiti/process/definition/index");
+		ModelAndView mv = new ModelAndView("bpm/form/template/index");
 		return mv;
 	}
 	//保存
 	@RequestMapping(value = "/save/", method = RequestMethod.POST)  
-	public RestfulMessage saveCategory(HttpSession httpSession, @RequestBody BpmnCategory category) {
+	public RestfulMessage saveCategory(HttpSession httpSession, @RequestBody FormTemplate bean) {
 		try {
 			httpSession.getAttribute("userLogin");
-			categoryService.save(category);
+			service.save(bean);
 			return new RestfulMessage().success("保存分类成功");
 		} catch (Exception e) {
 			return new RestfulMessage().success("保存分类失败");
@@ -56,10 +55,10 @@ public class BpmnDefineCategoryController {
 	}
 	//修改
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)  
-	public RestfulMessage  updateCategory(HttpSession httpSession,@PathVariable("id") String id,@RequestBody BpmnCategory category) {
+	public RestfulMessage  updateCategory(HttpSession httpSession,@PathVariable("id") String id,@RequestBody FormTemplate bean) {
 		try {
 			httpSession.getAttribute("userLogin");
-			categoryService.update(category);
+			service.update(bean);
 			return new RestfulMessage().success("更新分类成功");
 		} catch (Exception e) {
 			return new RestfulMessage().success("更新分类失败");
@@ -71,7 +70,7 @@ public class BpmnDefineCategoryController {
 	public RestfulMessage  getCategory(HttpSession httpSession,@PathVariable("id") String id) {
 		try {
 			httpSession.getAttribute("userLogin");
-			BpmnCategory bean=categoryService.get(id);
+			FormTemplate bean=service.get(id);
 			return new RestfulMessage().success(bean);
 		} catch (Exception e) {
 			return new RestfulMessage().success("获取分类失败");
@@ -84,7 +83,7 @@ public class BpmnDefineCategoryController {
 	public RestfulMessage delete(HttpSession httpSession, @PathVariable("id") String id) {
 		try {
 			httpSession.getAttribute("userLogin");
-			categoryService.delete(id);
+			service.delete(id);
 			return new RestfulMessage().success("删除分类成功");
 		} catch (Exception e) {
 			return new RestfulMessage().success("删除分类失败");
@@ -92,42 +91,9 @@ public class BpmnDefineCategoryController {
 
 	}
 	//
-	@RequestMapping(value = "/getTreeData.json", method = RequestMethod.GET)
-	public RestfulMessage getTreeData(HttpServletRequest request,HttpSession httpSession) {
-		
-		try {
-			httpSession.getAttribute("userLogin");
-			List<BpmnCategory> data=categoryService.findAll();
-			return new RestfulMessage().success(data);
-		} catch (Exception e) {
-			return new RestfulMessage().success("获取分类失败");
-		}
-	}
-	//
-	@RequestMapping(value = "/listJson", method = RequestMethod.GET)
-	public RestfulMessage listJson(HttpServletRequest request,HttpSession httpSession,@RequestBody BpmnCategoryVO vo) {		
-		try {
-			httpSession.getAttribute("userLogin");
-			return new RestfulMessage().success(categoryService.findByPage(vo));
-		} catch (Exception e) {
-			return new RestfulMessage().success("获取分类失败");
-		}
-	}
-    //
 	@RequestMapping(value = "/datatable/listJson.json", method = RequestMethod.GET)
-	public DataTableResult dataTableListJson(HttpServletRequest request,HttpSession httpSession) {
-		int start = Integer.parseInt(request.getParameter("start"));
-		int rows = Integer.parseInt(request.getParameter("length"));
-
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		int page=1;
-		if(start==0) {
-			 page=1;
-		}else {
-			 page=start/rows+1;			
-		}
-		httpSession.getAttribute("userLogin");
-		return processDefinitionService.findAll(map, page, rows);
+	public DataTableResult listJson(HttpServletRequest request,HttpSession httpSession,FormTemplateVO vo) {
+		return service.findByDataTable(vo);
 	}
 	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
 	public DataTableResult findAll(HttpServletRequest request,HttpSession httpSession) {

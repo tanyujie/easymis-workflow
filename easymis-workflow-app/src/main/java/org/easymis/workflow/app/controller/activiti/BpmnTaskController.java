@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.easymis.workflow.app.entity.bpm.BpmnTask;
 import org.easymis.workflow.app.entity.vo.BpmnTaskVO;
 import org.easymis.workflow.app.service.ProcessDefinitionService;
-import org.easymis.workflow.app.service.bpmn.BpmnTaskService;
+import org.easymis.workflow.app.service.bpm.BpmnTaskService;
 import org.easymis.workflow.app.utils.RestfulMessage;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.beans.factory.annotation.Autowired;

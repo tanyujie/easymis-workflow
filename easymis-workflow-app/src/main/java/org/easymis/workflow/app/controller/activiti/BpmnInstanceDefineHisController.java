@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.easymis.workflow.app.service.ProcessDefinitionService;
-import org.easymis.workflow.app.service.bpmn.BpmnInstanceDefineService;
+import org.easymis.workflow.app.service.bpm.BpmInstanceDefineService;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +24,7 @@ public class BpmnInstanceDefineHisController {
     @Autowired
     private ProcessDefinitionService processDefinitionService;
     @Autowired
-    private BpmnInstanceDefineService service;  
+    private BpmInstanceDefineService service;  
 	@RequestMapping("/")
 	public ModelAndView index1(HttpSession httpSession) {
 		httpSession.getAttribute("userLogin");

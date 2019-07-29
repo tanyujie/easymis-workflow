@@ -16,7 +16,7 @@ import org.activiti.engine.runtime.ProcessInstance;
 import org.easymis.workflow.app.entity.bpm.BpmnDefine;
 import org.easymis.workflow.app.entity.vo.BpmnDefineVO;
 import org.easymis.workflow.app.service.ProcessDefinitionService;
-import org.easymis.workflow.app.service.bpmn.BpmnDefineService;
+import org.easymis.workflow.app.service.bpm.BpmDefineService;
 import org.easymis.workflow.app.utils.RestfulMessage;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class BpmnDefineController {
     @Autowired
     private HistoryService historyService;
     @Autowired
-    private BpmnDefineService service;
+    private BpmDefineService service;
 
 	@RequestMapping("/")
 	public ModelAndView index1(HttpSession httpSession) {

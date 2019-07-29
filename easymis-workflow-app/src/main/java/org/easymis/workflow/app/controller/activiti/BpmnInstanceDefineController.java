@@ -10,7 +10,7 @@ import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.repository.Model;
 import org.easymis.workflow.app.entity.vo.BpmnInstanceDefineVO;
-import org.easymis.workflow.app.service.bpmn.BpmnInstanceDefineService;
+import org.easymis.workflow.app.service.bpm.BpmInstanceDefineService;
 import org.easymis.workflow.app.utils.RestfulMessage;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ import io.swagger.annotations.Api;
 @RequestMapping("/bpmn/instance/bpmDefine")
 public class BpmnInstanceDefineController {
     @Autowired
-    private BpmnInstanceDefineService service;  
+    private BpmInstanceDefineService service;  
     @Autowired
     private RepositoryService repositoryService;
     @Autowired

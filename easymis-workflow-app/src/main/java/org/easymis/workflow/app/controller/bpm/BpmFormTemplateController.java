@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.easymis.workflow.app.entity.bpm.BpmFormTemplate;
-import org.easymis.workflow.app.entity.vo.FormTemplateVO;
+import org.easymis.workflow.app.entity.bpm.BpmFormTemplateVO;
 import org.easymis.workflow.app.service.ProcessDefinitionService;
 import org.easymis.workflow.app.service.bpm.BpmFormTemplateService;
 import org.easymis.workflow.app.utils.RestfulMessage;
@@ -92,7 +92,7 @@ public class BpmFormTemplateController {
 	}
 	//
 	@RequestMapping(value = "/datatable/listJson.json", method = RequestMethod.GET)
-	public DataTableResult listJson(HttpServletRequest request,HttpSession httpSession,FormTemplateVO vo) {
+	public DataTableResult listJson(HttpServletRequest request,HttpSession httpSession,BpmFormTemplateVO vo) {
 		return service.findByDataTable(vo);
 	}
 	@RequestMapping(value = "/findAll", method = RequestMethod.GET)

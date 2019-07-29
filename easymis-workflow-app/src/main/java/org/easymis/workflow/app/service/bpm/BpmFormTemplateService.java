@@ -3,7 +3,7 @@ package org.easymis.workflow.app.service.bpm;
 import java.util.List;
 
 import org.easymis.workflow.app.entity.bpm.BpmFormTemplate;
-import org.easymis.workflow.app.entity.vo.FormTemplateVO;
+import org.easymis.workflow.app.entity.bpm.BpmFormTemplateVO;
 import org.easymis.workflow.app.web.DataTableResult;
 
 import com.github.pagehelper.PageInfo;
@@ -25,7 +25,7 @@ public interface BpmFormTemplateService {
 	* @return PageInfo    返回类型
 	* @throws
 	 */
-	public PageInfo findByPage(FormTemplateVO vo);
+	public PageInfo findByPage(BpmFormTemplateVO vo);
 	/**
 	 * 
 	* @Title: 查询全部不分页
@@ -36,5 +36,5 @@ public interface BpmFormTemplateService {
 	 */
 	public List<BpmFormTemplate> findAll();
 	
-	public DataTableResult findByDataTable(FormTemplateVO vo);
+	public DataTableResult findByDataTable(BpmFormTemplateVO vo);
 }

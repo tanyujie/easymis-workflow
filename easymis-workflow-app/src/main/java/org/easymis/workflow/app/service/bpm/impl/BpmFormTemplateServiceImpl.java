@@ -3,7 +3,7 @@ package org.easymis.workflow.app.service.bpm.impl;
 import java.util.List;
 
 import org.easymis.workflow.app.entity.bpm.BpmFormTemplate;
-import org.easymis.workflow.app.entity.vo.FormTemplateVO;
+import org.easymis.workflow.app.entity.bpm.BpmFormTemplateVO;
 import org.easymis.workflow.app.service.bpm.BpmFormTemplateService;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.stereotype.Service;
@@ -39,7 +39,7 @@ public class BpmFormTemplateServiceImpl implements BpmFormTemplateService {
 	}
 
 	@Override
-	public PageInfo findByPage(FormTemplateVO vo) {
+	public PageInfo findByPage(BpmFormTemplateVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -51,7 +51,7 @@ public class BpmFormTemplateServiceImpl implements BpmFormTemplateService {
 	}
 
 	@Override
-	public DataTableResult findByDataTable(FormTemplateVO vo) {
+	public DataTableResult findByDataTable(BpmFormTemplateVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -5,9 +5,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.easymis.workflow.app.entity.organize.OrganizeRole;
-import org.easymis.workflow.app.entity.vo.OrganizeRoleVO;
-import org.easymis.workflow.app.service.organize.OrganizeRoleService;
+import org.easymis.workflow.app.entity.organize.OrganizeDepartment;
+import org.easymis.workflow.app.entity.organize.OrganizeDepartmentVO;
+import org.easymis.workflow.app.service.organize.OrganizeDepartmentService;
 import org.easymis.workflow.app.utils.RestfulMessage;
 import org.easymis.workflow.app.web.DataTableResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +24,11 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api(value = "角色管理 controller", tags = { "角色管理  操作接口" })
-@RequestMapping("/organize/role")
-public class OrganizeRoleController {
+@Api(value = "部门管理 controller", tags = { "部门管理  操作接口" })
+@RequestMapping("/organize/department")
+public class OrganizeDepartmentController {
 	@Autowired
-	private OrganizeRoleService service;
+	private OrganizeDepartmentService service;
 
 	@RequestMapping("/")
 	public ModelAndView index1(HttpSession httpSession) {
@@ -46,13 +46,13 @@ public class OrganizeRoleController {
 
 	// 保存
 	@RequestMapping(value = "/save/", method = RequestMethod.POST)
-	public RestfulMessage saveCategory(HttpSession httpSession, @RequestBody OrganizeRole bean) {
+	public RestfulMessage saveCategory(HttpSession httpSession, @RequestBody OrganizeDepartment bean) {
 		try {
 			httpSession.getAttribute("userLogin");
 			service.save(bean);
-			return new RestfulMessage().success("保存角色成功");
+			return new RestfulMessage().success("保存部门成功");
 		} catch (Exception e) {
-			return new RestfulMessage().success("保存角色失败");
+			return new RestfulMessage().success("保存部门失败");
 		}
 
 	}
@@ -60,13 +60,13 @@ public class OrganizeRoleController {
 	// 修改
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
 	public RestfulMessage updateCategory(HttpSession httpSession, @PathVariable("id") String id,
-			@RequestBody OrganizeRole bean) {
+			@RequestBody OrganizeDepartment bean) {
 		try {
 			httpSession.getAttribute("userLogin");
 			service.update(bean);
-			return new RestfulMessage().success("更新角色成功");
+			return new RestfulMessage().success("更新部门成功");
 		} catch (Exception e) {
-			return new RestfulMessage().success("更新角色失败");
+			return new RestfulMessage().success("更新部门失败");
 		}
 
 	}
@@ -76,10 +76,10 @@ public class OrganizeRoleController {
 	public RestfulMessage getCategory(HttpSession httpSession, @PathVariable("id") String id) {
 		try {
 			httpSession.getAttribute("userLogin");
-			OrganizeRole bean = service.get(id);
+			OrganizeDepartment bean = service.get(id);
 			return new RestfulMessage().success(bean);
 		} catch (Exception e) {
-			return new RestfulMessage().success("获取角色失败");
+			return new RestfulMessage().success("获取部门失败");
 		}
 
 	}
@@ -90,51 +90,40 @@ public class OrganizeRoleController {
 		try {
 			httpSession.getAttribute("userLogin");
 			service.delete(id);
-			return new RestfulMessage().success("删除角色成功");
+			return new RestfulMessage().success("删除部门成功");
 		} catch (Exception e) {
-			return new RestfulMessage().success("删除角色失败");
+			return new RestfulMessage().success("删除部门失败");
 		}
 
 	}
-	@ApiOperation(value = "获取角色列表", notes = "获取角色列表")
+	@ApiOperation(value = "获取部门列表", notes = "获取部门列表")
 	@RequestMapping(value = "/getList", method = RequestMethod.GET)
 	public RestfulMessage getList() {
 		try {
-			List<OrganizeRole>  list = service.findAll();
+			List<OrganizeDepartment>  list = service.findAll();
 			return new RestfulMessage().success(list);
 		} catch (Exception e) {
-			return new RestfulMessage().success("获取角色列表失败");
+			return new RestfulMessage().success("获取部门列表失败");
 		}
 
 	}
-	@ApiOperation(value = "获取角色分页列表", notes = "获取角色分页列表")
+	@ApiOperation(value = "获取部门分页列表", notes = "获取部门分页列表")
 	@RequestMapping(value = "/getPage", method = RequestMethod.GET)
-	public RestfulMessage getPage(OrganizeRoleVO vo) {
+	public RestfulMessage getPage(OrganizeDepartmentVO vo) {
 		try {
-			PageInfo<OrganizeRole> list = service.findByPage(vo);
+			PageInfo<OrganizeDepartment> list = service.findByPage(vo);
 			return new RestfulMessage().success(list);
 		} catch (Exception e) {
-			return new RestfulMessage().success("获取角色列表失败");
+			return new RestfulMessage().success("获取部门列表失败");
 		}
 
 	}
 	//
 	@RequestMapping(value = "/datatable/listJson.json", method = RequestMethod.GET)
-	public DataTableResult listJson(HttpServletRequest request, HttpSession httpSession, OrganizeRoleVO vo) {
+	public DataTableResult listJson(HttpServletRequest request, HttpSession httpSession, OrganizeDepartmentVO vo) {
 		return service.findByDataTable(vo);
 	}
-	//角色权限修改
-	@RequestMapping(value = "/updateResource", method = RequestMethod.GET)
-	public RestfulMessage updateResource(HttpServletRequest request, HttpSession httpSession, OrganizeRoleVO vo) {
-		try {
-			httpSession.getAttribute("userLogin");
-		    //service.delete(id);
-			return new RestfulMessage().success("角色授权成功");
-		} catch (Exception e) {
-			return new RestfulMessage().success("角色授权失败");
-		}
 
-	}
 	
 	
 }

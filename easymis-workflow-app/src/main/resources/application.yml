@@ -1,13 +1,13 @@
 server:
   port: 9001
 eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  register-with-eureka: false
-  fetch-registry: false
   instance:
-    preferIpAddress: true
+    prefer-ip-address: true 
+  client:
+    register-with-eureka: true 
+    fetch-registry: true
+    service-url:
+      defaultZone: http://lj:lj123@localhost:8761/eureka
 mybatis:
   configuration:
     #开启驼峰命名转换

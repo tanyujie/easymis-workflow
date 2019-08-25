@@ -1,4 +1,4 @@
-package org.easymis.workflow.elasticsearch.bean;
+/*package org.easymis.workflow.elasticsearch.bean;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -80,3 +80,4 @@ public class User {
         this.dataStatus = dataStatus;
     }
 }
+*/

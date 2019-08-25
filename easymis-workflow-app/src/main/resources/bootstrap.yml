@@ -1,6 +1,6 @@
 spring:
   application:
-    name: easymis-dap-catalog
+    name: easymis-workflow-app
   profiles:
     active: development
   cloud:

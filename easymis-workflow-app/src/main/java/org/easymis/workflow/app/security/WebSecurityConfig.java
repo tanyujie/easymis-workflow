@@ -55,13 +55,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	      http.authorizeRequests()
           // 所有用户均可访问的资源
           .antMatchers("/resources/**","/static/**","/favicon.ico","/css/**","/common/**","/js/**","/plugins/**","/scss/**","/images/**",
-        		  "/captcha.jpg","/login","/login.html","/login.do","/userLogin","/login-error").permitAll();
+        		  "/captcha.jpg","/login","/login.html","/login.do","/userLogin","/login-error","/swagger-resources","/**").permitAll();
           //任何尚未匹配的URL只需要验证用户即可访问        
-        http.authorizeRequests()
+/*        http.authorizeRequests()
          .anyRequest()
-         .authenticated();
+         .authenticated();*/
         
-         http
+/*         http
          .formLogin()//开启formLogin默认配置
          .loginPage("/login")//请求时未登录跳转接口
          .defaultSuccessUrl("/index")//登录成功跳转接口
@@ -82,8 +82,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		  .logoutSuccessHandler(logoutSuccessHandler())//删除自定义的cookie
 		  .and()
 		  .sessionManagement()
-		  .maximumSessions(10).expiredUrl("/login");
+		  .maximumSessions(10).expiredUrl("/login");*/
 		  http.csrf().disable();
+	      //配置登录不需要验证
+		 http.authorizeRequests().anyRequest().permitAll().and().logout().permitAll();
     }
 
     @Autowired

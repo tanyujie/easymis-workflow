@@ -1,5 +1,5 @@
 package org.easymis.workflow.elasticsearch.mongodb;
-
+/*
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -24,16 +24,16 @@ public class MongodbController {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    /**表名*/
+    *//**表名*//*
     private static final String collectionName = "user";
 
-    /**
+    *//**
      * 描述：新增
      * @author maochengyuan
      * @created 2018/9/1 20:17
      * @param user
      * @return ResultObject
-     */
+     *//*
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     @ResponseBody
     public ResultObject insert(@ModelAttribute User user) throws Exception {
@@ -41,13 +41,13 @@ public class MongodbController {
         return new ResultObject(HttpServletResponse.SC_OK);
     }
 
-    /**
+    *//**
      * 描述：删除
      * @author maochengyuan
      * @created 2018/9/1 20:17
      * @param userId
      * @return ResultObject
-     */
+     *//*
     @RequestMapping("/delete")
     @ResponseBody
     public ResultObject delete(@RequestParam("userId") String userId) throws Exception {
@@ -56,13 +56,13 @@ public class MongodbController {
         return new ResultObject(HttpServletResponse.SC_OK);
     }
 
-    /**
+    *//**
      * 描述：修改
      * @author maochengyuan
      * @created 2018/9/1 20:17
      * @param user
      * @return ResultObject
-     */
+     *//*
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
     public ResultObject update(@ModelAttribute User user) throws Exception {
@@ -75,13 +75,13 @@ public class MongodbController {
         return new ResultObject(HttpServletResponse.SC_OK);
     }
 
-    /**
+    *//**
      * 描述：查询
      * @author maochengyuan
      * @created 2018/9/1 20:17
      * @param
      * @return ResultObject
-     */
+     *//*
     @RequestMapping("/query")
     @ResponseBody
     public ResultObject query() throws Exception {
@@ -91,3 +91,4 @@ public class MongodbController {
     }
 
 }
+*/

@@ -1,4 +1,4 @@
-package org.easymis.workflow.elasticsearch.ThreadPool;
+package org.easymis.workflow.elasticsearch.thread.pool;
 
 public class TempThread  implements Runnable  {
 	     @Override

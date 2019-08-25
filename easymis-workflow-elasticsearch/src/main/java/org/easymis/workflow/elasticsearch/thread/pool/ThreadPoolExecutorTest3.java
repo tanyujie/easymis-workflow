@@ -1,4 +1,4 @@
-package org.easymis.workflow.elasticsearch.ThreadPool;
+package org.easymis.workflow.elasticsearch.thread.pool;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

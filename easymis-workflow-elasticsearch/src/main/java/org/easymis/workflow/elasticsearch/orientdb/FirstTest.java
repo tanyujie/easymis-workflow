@@ -17,10 +17,10 @@ public class FirstTest {
 
         OrientDB orient = new OrientDB("remote:localhost", OrientDBConfig.defaultConfig());
         ODatabaseSession db = orient.open("test", "root", "root");
-
+        //chua
         createSchema(db);
 
-        createPeople(db);
+      //  createPeople(db);
 
         executeAQuery(db);
 
@@ -30,8 +30,16 @@ public class FirstTest {
         orient.close();
 
     }
-
+	/**
+	 * 
+	* @Title: createSchema
+	* @Description: TODO(创建表)
+	* @param @param db    设定文件
+	* @return void    返回类型
+	* @throws
+	 */
     private static void createSchema(ODatabaseSession db) {
+    	//级或集群|表
         OClass person = db.getClass("Person");
 
         if (person == null) {
@@ -39,6 +47,7 @@ public class FirstTest {
         }
 
         if (person.getProperty("name") == null) {
+        	//OrientDB中的属性类似于数据库表中的类和列的字段。
             person.createProperty("name", OType.STRING);
             person.createIndex("Person_name_index", OClass.INDEX_TYPE.NOTUNIQUE, "name");
         }
@@ -47,6 +56,14 @@ public class FirstTest {
             db.createEdgeClass("FriendOf");
         }
     }
+    /**
+     * 
+    * @Title: createPeople
+    * @Description: TODO(插入记录)
+    * @param @param db    设定文件
+    * @return void    返回类型
+    * @throws
+     */
     private static void createPeople(ODatabaseSession db) {
         OVertex alice = createPerson(db, "Alice", "Foo");
         OVertex bob = createPerson(db, "Bob", "Bar");

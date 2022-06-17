@@ -11,7 +11,7 @@
 	<groupId>org.easymis.workflow</groupId>
 	<artifactId>easymis-workflow-app</artifactId>
 	<properties>
-		<alibaba.fastjson.version>1.2.39</alibaba.fastjson.version>
+		<alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
 		<activiti.version>6.0.0</activiti.version>
 		<apache.xmlgraphics.version>1.9</apache.xmlgraphics.version>
 	</properties>
